@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nossa História</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .overlay-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .buttons {
+      margin-bottom: 20px;
+    }
+
+    .story-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 600px;
+    }
+
+    /* Galeria */
+    .gallery {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #0d0006;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .photo-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.3);
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Imagem sobreposta no fundo -->
+  <img class="overlay-image" src="https://cdn.discordapp.com/attachments/1344802129524690954/1355446289575448646/reencontro2.png?ex=67fb6a3a&is=67fa18ba&hm=32c6a58255d68b017c3751d9a2e845ce0de7c9e3c71cc0d908f7cf62e1404f9e&=&format=webp&quality=lossless&width=1074&height=421" alt="Imagem de fundo sobreposta" />
+
+  <div class="content">
+    <h1>Nossa História 💖</h1>
+
+    <div class="buttons">
+      <button onclick="showStory('conhecemos')">06/01/2025 – Primeiro Contato</button>
+      <button onclick="showStory('gostar')">16/01/2025 – Primeira Festa Juntas/quando realmente começamos a conversar</button>
+      <button onclick="showStory('Farol')">Nosso Cantinho – O Farol</button>
+      <button onclick="showStory('Aniversario')">31/01/2025 – Meu Aniversário</button>
+      <button onclick="showStory('termino')">06/02/2025 – O Término</button>
+      <button onclick="showStory('reconciliacao')">20/03/2025 – Recomeço</button>
+      <button onclick="showStory('pedido')">23/03/2025 – O Pedido de Namoro</button>
+      <button onclick="showStory('motivos')">Por que eu te amo</button>
+      
+    </div>
+
+    <div class="story-box" id="story-box"></div>
+
+    <!-- Catálogo de Fotos -->
+    <div class="gallery">
+      <h2>✨ Nosso Álbum ✨</h2>
+      <div class="photo-grid">
+        <img src="https://media.discordapp.net/attachments/1344802129524690954/1355446288321216673/casal.png?ex=67fb6a3a&is=67fa18ba&hm=ae5430facda542bd189261cc86432331840e05d5438be5b7f97c2ece3870e0c3&=&format=webp&quality=lossless&width=1026&height=680" alt="Foto 1" />
+        <img src="https://media.discordapp.net/attachments/1344802129524690954/1355446288866480148/festa2.png?ex=67fb6a3a&is=67fa18ba&hm=c2e23a136c0575ae8de73bacbef6b911403330b5e6d5bc32ed5af8e40554087a&=&format=webp&quality=lossless&width=1019&height=680" alt="Foto 2" />
+        <img src="https://media.discordapp.net/attachments/1344802129524690954/1355446291387121684/foto_no_farol.png?ex=67fb6a3a&is=67fa18ba&hm=32b9ec7936fcd94fba8a440bf87aedf63c389a7e97b342e9480000263fc96777&=&format=webp&quality=lossless&width=1410&height=661" alt="Foto 3" />
+        <img src="https://media.discordapp.net/attachments/1344802129524690954/1355446290800050256/meu_aniversario.png?ex=67fb6a3a&is=67fa18ba&hm=94b3d301157a50fd76466359e7ccf09894cc6ddd31da899fa465da3effe419fa&=&format=webp&quality=lossless&width=760&height=326" alt="Foto 4" />
+        <img src="https://media.discordapp.net/attachments/1325945780699402301/1360444068211069059/image.png?ex=67fbcc85&is=67fa7b05&hm=d5a354b0e7ed1d6a29a67913be961fd150798a30d8d9203899561a637d30bbad&=&format=webp&quality=lossless&width=579&height=710" alt="Foto 5" />
+        <img src="https://media.discordapp.net/attachments/1325945780699402301/1360444576204324884/image.png?ex=67fbccfe&is=67fa7b7e&hm=62e57c8f6eb82cb39153b7573d67cbcc5d671d248bd57da91a822fa12319d1e9&=&format=webp&quality=lossless&width=584&height=771" alt="Foto 6" />
+        <img src="https://media.discordapp.net/attachments/1325945780699402301/1360444823403761704/image.png?ex=67fbcd39&is=67fa7bb9&hm=b9a45dcd8a0eeb841169d53f848e73ae9502a68cd850488e3e200d2ab31359cc&=&format=webp&quality=lossless&width=920&height=788" alt="Foto 7" />
+        <img src="https://media.discordapp.net/attachments/1344802129524690954/1355446292360331394/Festa_em_que_foi_promovida_para_supervisora.png?ex=67fb6a3b&is=67fa18bb&hm=d002b69a2d868593c5679a2399470cf50365fb37d9f6e2bebddc9776440d4c80&=&format=webp&quality=lossless&width=1095&height=680" alt="Foto 8" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox container -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="Imagem ampliada" id="lightbox-img" />
+  </div>
+
+  <script>
+    // Quando clica na imagem da galeria
+    document.querySelectorAll('.photo-grid img').forEach(img => {
+      img.addEventListener('click', function () {
+        document.getElementById('lightbox-img').src = this.src;
+        document.getElementById('lightbox').style.display = 'flex';
+      });
+    });
+
+    // Fecha ao clicar fora
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
+    
